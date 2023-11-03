@@ -11,7 +11,7 @@
     "url": "git@khapu2906:khapu2906/pho-cms.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@pho-cms/loader": "^0.4.8-alpha",
     "axios": "^1.3.6",
