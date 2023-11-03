@@ -1,0 +1,42 @@
+{
+    "cache_folder_path": "./bootstrap/cache", 
+    "dir_tree": {
+        "app": {
+            "commands": {},
+            "http": {
+                "controllers": {},
+                "interceptors": {
+                    "middleware": {},
+                    "requests": {},
+                    "responses": {}
+                }
+            },
+            "ORMs": {}
+        },
+        "bootstrap": {
+            "cache": {}
+        },
+        "configs": {},
+        "database": {},
+        "interfaces": {
+            "apis": {},
+            "web": {}
+        },
+        "kernel": {
+            "router": {},
+            "interface": {
+                "apis": {},
+                "web": {}
+            }
+        },
+        "libs": {},
+        "public": {},
+        "routes": {
+            "apis": {},
+            "cli": {},
+            "web": {}
+        },
+        "storage": {},
+        "test": {}
+    }
+}
