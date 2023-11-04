@@ -5,7 +5,8 @@ module.exports = {
 	storage: {
 		host: process.env.REDIS_CACHE_HOST || "127.0.0.1",
 		port: process.env.REDIS_CACHE_PORT || 6379,
-		auth: `${process.env.REDIS_CACHE_USER}:${process.env.REDIS_CACHE_PASSWORD}` || "xxx:xxx",// [username][:password]
+		username: process.env.REDIS_CACHE_USER || null,
+		password: process.env.REDIS_CACHE_PASS || null,
 		db: process.env.REDIS_CACHE_DB || "0",
 	},
 	attempt: 1,
