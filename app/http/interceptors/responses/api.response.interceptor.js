@@ -1,6 +1,5 @@
 "use strict";
-const Loader = require("@pho-cms/loader")
-const { handle } = Loader.use("kernel/interface/apis", "index")
+const { handle } = require("../../../../kernel/interface/apis")
 /**
  *  ResponseMiddleware 
  * 

@@ -27,7 +27,6 @@ async function runJob(jobPath) {
  * @param {string} jobName 
  */
 module.exports = async (jobName) => {
-	console.log(jobName)
 	// if jobName = "*" run all jobs
 	if (jobName === "*") {
 		for (const job of jobConfig) {
