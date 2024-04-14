@@ -32,7 +32,7 @@ module.exports = async (jobName) => {
 	// if jobName = "*" run all jobs
 	if (jobName === "*") {
 		for (const job of jobConfig) {
-			// await runJob(job.path)
+			await runJob(job.path)
 		}
 	} else {
 		// if jobname is special, run that jobname
