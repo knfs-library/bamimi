@@ -1,1 +1,1 @@
-# node-be_template
+# Bamimi CMS
