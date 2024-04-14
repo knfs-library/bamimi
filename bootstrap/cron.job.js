@@ -6,8 +6,9 @@ const BASE_PATH = './../app/jobs';
 
 async function runJob(jobPath) {
 	const job = require(path.join(__dirname, BASE_PATH, jobPath))
+	console.log(job);
 	if (job.setCronJob) {
-		new cron.CronJob({
+		cron.CronJob.from({
 			cronTime: job.cronTime,
 			onTick: async () => {
 				console.log(`Cron job ${job.name} running...`);
@@ -18,6 +19,8 @@ async function runJob(jobPath) {
 			start: true,
 			timeZone: 'Asia/Ho_Chi_Minh'
 		}).start()
+
+		
 	}
 }
 
@@ -36,7 +39,7 @@ module.exports = async (jobName) => {
 		// if jobname is special, run that jobname
 		const job = jobConfig.find((ele) => ele.name === jobName)
 		if (job) {
-			// await runJob(job.path)
+			await runJob(job.path)
 		}
 	}
 }
