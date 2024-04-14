@@ -6,7 +6,6 @@ const BASE_PATH = './../app/jobs';
 
 async function runJob(jobPath) {
 	const job = require(path.join(__dirname, BASE_PATH, jobPath))
-	console.log(job);
 	if (job.setCronJob) {
 		cron.CronJob.from({
 			cronTime: job.cronTime,
