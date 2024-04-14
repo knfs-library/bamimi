@@ -1,6 +1,5 @@
-const Loader = require("@pho-cms/loader")
 
-const queueConf = Loader.use("configs", "queue.js")
+const queueConf = require("./../../configs/queue")
 
 const connection = {
 	host: queueConf.storage.host,

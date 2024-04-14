@@ -13,7 +13,6 @@ module.exports = {
 	backoff: true,
 	ttl: 1000,
 	basePath: "./../",
-	queues: {
-		
-	}
+	queues: [
+	]
 }

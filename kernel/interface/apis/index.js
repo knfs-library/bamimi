@@ -1,6 +1,5 @@
 "use strict";
-const Loader = require("@pho-cms/loader")
-const ifa = Loader.use("interfaces/apis", "index")
+const {content: ifaContent, message: ifaMsg} = require("./../../../interfaces/apis")
 
 /**
  * 
@@ -9,9 +8,9 @@ const ifa = Loader.use("interfaces/apis", "index")
  */
 exports.handle = async (status, data = null) => {
 	
-	let message = { ...ifa.message }
+	let message = { ...ifaMsg }
 
-	const founder = ifa.content.find((msg) => msg.status == status)
+	const founder = ifaContent.find((msg) => msg.status == status)
 
 	message.meta.content = founder.metaData
 	message.meta.code = founder.status

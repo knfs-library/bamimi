@@ -12,7 +12,7 @@ const assignTaskNotify = async (task) => {
     msg.content = task
     msg.type = "user_be_assigned_to_task"
 
-    return await msg
+    return msg
 }
 
 const unassignTaskNotify = async (task) => {
@@ -21,7 +21,7 @@ const unassignTaskNotify = async (task) => {
     msg.content = task
     msg.type = "user_be_unassigned_to_task"
 
-    return await msg
+    return msg
 }
 
 const updatePermissionsNotify = async (permission) => {
@@ -30,7 +30,7 @@ const updatePermissionsNotify = async (permission) => {
     msg.content = permission
     msg.type = "user_be_updated_permissions"
 
-    return await msg
+    return msg
 }
 
 const updateRoleNotify = async (role) => {
@@ -39,7 +39,7 @@ const updateRoleNotify = async (role) => {
     msg.content = role
     msg.type = "user_be_updated_role"
 
-    return await msg
+    return msg
 }
 
 const notificationTypes = {

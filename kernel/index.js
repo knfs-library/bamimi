@@ -2,7 +2,6 @@
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const methodOverride = require("method-override");
-const Loader = require("@pho-cms/loader")
 
 
 exports.middleware = {
@@ -15,7 +14,7 @@ exports.middleware = {
 		cookieParser()
 	],
 	api: [
-		Loader.use("app/http/interceptors/responses", "api.response.interceptor")
+		require("../app/http/responses/api.response.interceptor")
 	],
 	web: [
 		/**

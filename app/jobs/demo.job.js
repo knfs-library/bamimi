@@ -2,10 +2,10 @@
  * Build job task ...
  */
 module.exports = {
-    name: "demo-job",
-    setCronJob: false,
+    name: "demo",
+    setCronJob: true,
     backoff: { delay: 60 * 1000, type: "fixed" },
-    cronTime: "00 50 01 * * 0-6",
+    cronTime: "* * * * * *",
     ttl: 5 * 60 * 1000,
     attempts: 2,
     priority: "low",

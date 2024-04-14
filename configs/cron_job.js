@@ -1,6 +1,6 @@
 module.exports = [
 	{
-		name: 'demo-job',
+		name: 'demo',
 		path: 'demo.job.js'
 	}
 ];

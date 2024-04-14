@@ -1,12 +1,10 @@
 const router = require('express').Router()
-const Loader = require("@pho-cms/loader")
-
 
 router.use('/',
 	require("../index").middleware.web,
-	Loader.use("routes/web", "index"))
+	require("../../routes/web"))
 router.use('/api',
 	require("../index").middleware.api,
-	Loader.use("routes/apis", "index"))
+	require("../../routes/apis"))
 
 module.exports = router

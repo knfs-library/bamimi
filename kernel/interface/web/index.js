@@ -1,9 +1,9 @@
 "use strict";
-const Loader = require("@pho-cms/loader")
 const partials = require("express-partials")
+const path = require("path")
 
 module.exports = function handle(app) {
 	app.set('view engine', 'ejs');
-	app.set('views', Loader.namespace('interfaces/web'))
+	app.set('views', path.join(__dirname, "../../../interfaces/web"))
 	app.use(partials())
 }

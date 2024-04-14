@@ -1,8 +1,7 @@
 "use strict";
 const express = require("express");
 const app = express();
-const Loader = require("@pho-cms/loader")
-const configs = Loader.use("configs", "index");
+const configs = require("./../configs")
 const responseTime = require("response-time");
 const errorhandler = require('errorhandler')
 
@@ -11,7 +10,7 @@ const errorhandler = require('errorhandler')
  * Set up common middleware
  * **********************************
  */
-const kernelMiddleware = Loader.use("kernel", "index").middleware.common
+const kernelMiddleware = require("./../kernel/index").middleware.common
 app.use(kernelMiddleware)
 
 /**
@@ -19,15 +18,14 @@ app.use(kernelMiddleware)
  * Set up router
  * **********************************
  */
-app.use(Loader.use("kernel/router", "index"))
+app.use(require("./../kernel/router"))
 
 /**
  * **********************************
  * Set up template
  * **********************************
  */
-Loader.use("kernel/interface/web", "index")(app)
-
+require("./../kernel/interface/web")(app)
 /**
  * **********************************
  * Set response time
