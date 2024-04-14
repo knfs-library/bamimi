@@ -1,6 +1,6 @@
 "use strict";
 const cron = require('cron');
-const jobConfig = require("./../configs/cron_job")
+const jobConfig = require("../configs/cronJob")
 const path = require("path");
 const BASE_PATH = './../app/jobs';
 

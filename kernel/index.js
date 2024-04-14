@@ -14,7 +14,7 @@ exports.middleware = {
 		cookieParser()
 	],
 	api: [
-		require("../app/http/responses/api.response.interceptor")
+		require("../app/http/responses/api.response")
 	],
 	web: [
 		/**

@@ -16,5 +16,5 @@ exports.handle = async (status, data = null) => {
 	message.meta.code = founder.status
 	message[founder.typeMessage] = data
 
-	return await message
+	return message
 }

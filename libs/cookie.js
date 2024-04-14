@@ -1,5 +1,5 @@
 
-exports.parseCookies = (cookies) => {
+export function parseCookies(cookies) {
     const list = {};
     if (!cookies) {return list;}
 
@@ -15,7 +15,7 @@ exports.parseCookies = (cookies) => {
     return list;
 }
 
-exports.getCookie = async (key, cookies) => {
+export async function getCookie(key, cookies) {
     if (!cookies) {return false;}
 
     for (const cookie of cookies.split(";")) {
