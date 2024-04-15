@@ -25,7 +25,6 @@ module.exports = {
 	},
 	cors: {
 		whileList: [
-			// "https://panilly-stag.web.app/login"
 		]
 	}
 }

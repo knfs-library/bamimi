@@ -3,7 +3,12 @@ const express = require("express");
 const app = express();
 const configs = require("./../configs")
 const responseTime = require("response-time");
-const errorhandler = require('errorhandler')
+const errorhandler = require('errorhandler');
+const path = require("path")
+const jobOnMain = require("./../kernel/cronjobs/onMain");
+app.use('/public', express.static(path.join(__dirname, './../public')))
+
+
 
 /**
  * **********************************
@@ -26,6 +31,14 @@ app.use(require("./../kernel/router"))
  * **********************************
  */
 require("./../kernel/interface/web")(app)
+
+/**
+ * ***********************************
+ * Setup static file
+  ***********************************
+ */
+app.use('/public', express.static(path.join(__dirname, './../public')))
+
 /**
  * **********************************
  * Set response time
@@ -44,6 +57,11 @@ if (process.env.NODE_ENV === 'development') {
 	// only use in development
 	app.use(errorhandler())
 }
+/**
+ * **********************************
+ * Job run on main process
+ */
+jobOnMain();
 
 app.listen(configs.app.server.port, function () {
 	console.log("listening on port " + configs.app.server.port)
