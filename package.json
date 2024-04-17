@@ -40,12 +40,15 @@
     "ioredis": "^5.3.2",
     "method-override": "^3.0.0",
     "mongoose": "^7.6.0",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
     "ps-node": "^0.1.6",
     "queue": "^7.0.0",
     "response-time": "^2.3.2",
+    "rotating-file-stream": "^3.2.1",
     "socket.io": "^4.7.5",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "winston": "^3.13.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",

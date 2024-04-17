@@ -6,9 +6,20 @@ const responseTime = require("response-time");
 const errorhandler = require('errorhandler');
 const path = require("path")
 const jobOnMain = require("./../kernel/cronjobs/onMain");
+const logger = require("./../libs/log")
+const morgan = require("morgan")
+/** 
+ * **********************************
+ * Set log
+ * **********************************
+ */
+app.use(morgan('combined', { stream: logger.stream }))
+/***
+ * **********************************
+ * Set static file
+ * **********************************
+ */
 app.use('/public', express.static(path.join(__dirname, './../public')))
-
-
 
 /**
  * **********************************
@@ -57,6 +68,7 @@ if (process.env.NODE_ENV === 'development') {
 	// only use in development
 	app.use(errorhandler())
 }
+
 /**
  * **********************************
  * Job run on main process

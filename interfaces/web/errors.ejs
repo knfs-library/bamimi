@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>BAMIMI Welcome Page</title>
+	<title>404</title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<style>
@@ -59,29 +59,16 @@
 			margin-bottom: 10px;
 			color: #9f9fa0;
 		}
-		.bami {
-			color:#013C4D
-		}
-		.mi { 
-			color:#2B7F84
-		}
+
 	</style>
 </head>
 
 <body>
 	<div class="flex-center position-ref full-height">
-		<div class="top-right links">
-			<a href="#">Documentation</a>
-			<a href="#">News</a>
-			<a href="#">Forge</a>
-			<a href="https://github.com/knfs-jsc/bamimi">GitHub</a>
-		</div>
-
 		<div class="content">
 			<div class="title m-b-md">
-				<span class="bami">BAMI</span><span class="mi">MI</span>
+				<span><%= status %> | <%= message %></span>
 			</div>
-			<span>v1.0.2-internal</span>
 		</div>
 	</div>
 	<!-- Bootstrap JS, Popper.js, and jQuery -->

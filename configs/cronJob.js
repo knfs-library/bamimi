@@ -7,6 +7,6 @@ module.exports = [
 	{
 		name: 'demo2',
 		path: 'demo2.job.js',
-		onMain: true
+		onMain: false
 	}
 ];

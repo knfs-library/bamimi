@@ -2,6 +2,7 @@
 const cron = require('cron');
 const path = require("path");
 const BASE_PATH = './../../app/jobs';
+const logger = require("./../../libs/log")
 
 module.exports = async (jobPath) => {
 	const job = require(path.join(__dirname, BASE_PATH, jobPath))
@@ -9,11 +10,11 @@ module.exports = async (jobPath) => {
 		cron.CronJob.from({
 			cronTime: job.cronTime,
 			onTick: async () => {
-				console.log(`Cron job ${job.name} running...`);
+				logger.job(job.name, {message:`Cron job ${job.name} running...`})
 				await job.handle()
 			},
 			onComplete: () => {
-				console.log(`Cron job ${job.name} completed`);
+				logger.job(job.name, { message: `Cron job ${job.name} running...` })
 			},
 			start: true,
 			timeZone: 'Asia/Ho_Chi_Minh'
