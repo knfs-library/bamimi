@@ -4,9 +4,12 @@
   "description": "CMS for nodejs",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "schedule": "node schedule.js",
-    "socket": "node socket.js",
+    "start": "node ./src/server.js",
+    "schedule": "node ./src/schedule.js",
+    "socket": "node ./src/socket.js",
+    "build": "npx ncc build src/server.js -o dist --v8-cache -m",
+    "build-socket": "npx ncc build src/socket.js -o dist --v8-cache -m",
+    "build-schedule": "npx ncc build src/schedule.js -o dist --v8-cache -m",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -57,7 +60,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
     "@babel/preset-env": "^7.22.20",
     "@faker-js/faker": "^7.6.0",
-    "@vercel/ncc": "^0.38.0",
+    "@vercel/ncc": "^0.38.1",
     "babel-plugin-module-resolver": "^5.0.0",
     "babel-register": "^6.26.0",
     "eslint": "^8.34.0",

@@ -2,7 +2,9 @@ module.exports = [
 	{
 		path: '/abc',
 		func: function ({ io, socket }) { 
-			io.emit("connect to abc")
+			socket.on('chat message', (msg) => {
+				io.emit('chat message', msg);
+			});
 		}
 	}
 ];
