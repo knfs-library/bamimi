@@ -23,6 +23,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@knfs-tech/bamimi-socket.io": "^1.0.5",
     "axios": "^1.3.6",
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
@@ -70,5 +71,6 @@
     "socket.io-client": "^4.6.1",
     "supertest": "^6.3.3",
     "webpack-cli": "^5.1.4"
-  }
+  },
+  "private": true
 }
