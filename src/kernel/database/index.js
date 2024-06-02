@@ -1,5 +1,6 @@
-const mongoose = require('mongoose');
-const config = require("./../../configs/mongodb")
 
-mongoose.connect(`mongodb://${config.host}:${config.port}/${config.database}/${config.user}:${config.password}`)
-	.then(() => console.log('Connected!'));
+const config = require("./../../configs/database")
+const { Sequelize } = require('sequelize');
+const sequelize = new Sequelize(config.development);
+
+module.exports = sequelize;

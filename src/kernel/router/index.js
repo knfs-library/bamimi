@@ -6,8 +6,5 @@ router.use('/api',
 router.use('/',
 	require("../index").middleware.web,
 	require("../../routes/web"))
-router.use('*',
-	require("../../app/http/errors/404")
-)
 
 module.exports = router

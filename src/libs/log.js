@@ -1,3 +1,4 @@
+const fs = require('fs-extra');
 const config = require("./../configs/log")
 const path = require('path')
 const pathStorage = "./../storage/sys"
@@ -51,7 +52,9 @@ const addTransportsLevel = (level, extend = null) => {
 	const transports = [
 		new winston.transports.Console(options.console)
 	];
-	if (config.logFile?.access) {
+	if (true === config.logFile?.access) {
+		console.log("accessFile OK")
+		cleanupOldLogs(path.join(__dirname, pathStorage, 'logs'));
 		transports.push(
 			new winston.transports.File(options.all)
 		)
@@ -61,10 +64,10 @@ const addTransportsLevel = (level, extend = null) => {
 					new winston.transports.File(options.error)
 				)
 				return transports
-			case 'job': 
+			case 'job':
 				transports.push(
 					new winston.transports.File({
-						...options.error, 
+						...options.error,
 						filename: path.join(__dirname, pathStorage, 'logs', `job_${extend}.log`)
 					})
 				)
@@ -74,9 +77,39 @@ const addTransportsLevel = (level, extend = null) => {
 	return transports
 }
 
+const cleanupOldLogs = (logDir) => {
+	const ttl = (config.logFile?.ttl || 24 * 60 * 60) * 1000; // TTL in milliseconds, default is 1 day
+	fs.readdir(logDir, (err, files) => {
+		if (err) {
+			console.error(`Error reading log directory: ${err}`);
+			return;
+		}
+		files.forEach(file => {
+			const filePath = path.join(logDir, file);
+			fs.stat(filePath, (err, stats) => {
+				if (err) {
+					console.error(`Error getting file stats: ${err}`);
+					return;
+				}
+				const now = Date.now();
+				const fileAge = now - stats.mtimeMs;
+				if (fileAge > ttl) {
+					fs.remove(filePath, (err) => {
+						if (err) {
+							console.error(`Error deleting file: ${err}`);
+							return;
+						}
+						console.log(`Deleted old log file: ${filePath}`);
+					});
+				}
+			});
+		});
+	});
+}
+
 const Logger = {
 	info: (content = { level, message, metadata }) => {
-		content = {...content, level: 'info'}
+		content = { ...content, level: 'info' }
 		return winston.createLogger({
 			level: 'info',
 			format: winston.format.json(),

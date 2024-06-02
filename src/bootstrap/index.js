@@ -1,25 +1,29 @@
 "use strict";
+require("@knfs-tech/bamimi-autoload")
 const express = require("express");
 const app = express();
 const configs = require("./../configs")
 const responseTime = require("response-time");
 const errorhandler = require('errorhandler');
 const path = require("path")
+const { createServer } = require('node:http');
+const socket = require("@knfs-tech/bamimi-socket.io")
+const server = createServer(app);
+socket.io(server, configs.socket)
+
 const jobOnMain = require("./../kernel/cronjobs/onMain");
-const logger = require("./../libs/log")
-const morgan = require("morgan")
 /** 
  * **********************************
  * Set log
  * **********************************
  */
-app.use(morgan('combined', { stream: logger.stream }))
+require("./../kernel/logs")(app)
 /***
  * **********************************
  * Set static file
  * **********************************
  */
-app.use('/public', express.static(path.join(__dirname, './../public')))
+app.use('/public', express.static(path.join(__dirname, './../public'), { maxAge: configs.app.staticCacheTime }))
 
 /**
  * **********************************
@@ -75,7 +79,8 @@ if (process.env.NODE_ENV === 'development') {
  */
 jobOnMain();
 
-app.listen(configs.app.server.port, function () {
+server.listen(configs.app.server.port, function () {
 	console.log("listening on port " + configs.app.server.port)
 })
+
 

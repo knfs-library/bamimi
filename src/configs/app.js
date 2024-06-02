@@ -13,8 +13,10 @@ module.exports = {
         options: {
             key: '',
             cert: '',
-        }
+        },
+        asset: process.env.APP_ASSET || `${this.host}:${this.port}`
     },
     useTableInformation: false,
-    timeZone: process.env.TIME_ZONE || 'America/Los_Angeles'
+    timeZone: process.env.TIME_ZONE || 'America/Los_Angeles',
+    staticCacheTime: 360000,
 };

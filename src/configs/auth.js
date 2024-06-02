@@ -24,7 +24,24 @@ module.exports = {
 		prefixBlackList: 'BBL_'
 	},
 	cors: {
-		whileList: [
-		]
-	}
+		origin: '*',
+		// origin: function (origin, callback) {
+		// 	const whiteList = [
+		// 		'http://localhost:4001',
+		// 		'http://localhost'
+		// 	]
+		// 	// Kiểm tra xem origin có được phép không
+		// 	if (whiteList.includes(origin)) {
+		// 		callback(null, true);
+		// 	} else {
+		// 		$_logger.error(callback(new Error('Not allowed by CORS')))
+		// 		callback(new Error('Not allowed by CORS'));
+		// 	}
+		// },
+		methods: 'GET,POST',
+		// allowedHeaders: 'Content-Type,Authorization',
+		// exposedHeaders: 'Authorization',
+		// credentials: true
+	},
+	socketToken: process.env.TOKEN_SOCKET ?? ''
 }
