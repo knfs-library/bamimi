@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BAMIMI</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/styles.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+	<div class="cursor" id="customCursor"></div>
+	<!-- Navigation Bar -->
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<a class="navbar-brand knfs-logo" href="https://www.knfs-tech.com/" target="_blank" title="KNFs JSC" rel="nofollow noopener">
+			<img src="assets/img/knfs-logo.png" alt="Logo" class="logo">
+		</a>
+		<span class="or">/</span>
+		<a class="navbar-brand" href="#">
+			<span class="bami">BAMI</span><span class="mi">MI</span>
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">
+						Version
+					</a>
+					<div class="dropdown-menu" aria-labelledby="versionDropdown">
+						<a class="dropdown-item" href="#">0.1.0</a>
+					</div>
+				</li>
+
+				<li class="nav-item active">
+					<a class="nav-link" href="#overview">Overview <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#installation">Installation</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Hero Section -->
+	<header class="hero">
+		<div class="container">
+			<img src="assets/img/bamimi-logo.png" alt="MyFramework Logo" width="250" id="logo">
+			<div class="title m-b-md">
+				<span class="bami">BAMI</span><span class="mi">MI</span>
+			</div>
+			<p class="lead">A powerful framework for building great apps <span
+					class="bami highlight-text">quickly</span>, <span class="mi highlight-text">cleanly</span>, <span
+					class="bami highlight-text">securely</span>, and <span class="mi highlight-text">efficiently</span>
+			</p>
+		</div>
+	</header>
+
+	<!-- Main Content -->
+	<div class="container mt-4">
+		<!-- Overview Section -->
+		<section id="overview">
+			<h2 class="mb-4">Overview</h2>
+			<p>Bamimi is a web application framework with expressive, elegant syntax. We believe development must be an
+				enjoyable and
+				creative experience to be truly fulfilling. Bamimi takes the pain out of development by easing common
+				tasks used in many
+				web projects</p>
+		</section>
+
+		<!-- Installation Section -->
+		<section id="installation">
+			<h2 class="mb-4">Installation</h2>
+			<p>To install <span class="bami">BAMI</span><span class="mi">MI</span>, follow these steps</p>
+			<h5 class="mt-4 mb-2 bami">Step 1: Install Cli:</h5>
+			<label>With npm</label>
+			<div class="position-relative code-container">
+				<button class="btn btn-primary copy-button"
+					data-clipboard-text="npm install -g @knfs-tech/bamimi-cli"><i class="fas fa-copy"></i></button>
+				<pre><code class="language-javascript">npm install -g @knfs-tech/bamimi-cli</code></pre>
+			</div>
+			<label>With yarn</label>
+			<div class="position-relative code-container">
+				<button class="btn btn-primary copy-button"
+					data-clipboard-text="yarn global add @knfs-tech/bamimi-cli"><i class="fas fa-copy"></i></button>
+				<pre><code class="language-javascript">yarn global add @knfs-tech/bamimi-cli</code></pre>
+			</div>
+			<h5 class="mt-4 mb-2 bami">Step 2: Generate project:</h5>
+			<label>Normal</label>
+			<div class="position-relative code-container">
+				<button class="btn btn-primary copy-button" data-clipboard-text="npm install -g @knfs-tech/bamimi-cli"><i
+						class="fas fa-copy"></i></button>
+				<pre><code class="language-javascript">bamimi-cli create &lt;projectName&gt; [options]</code></pre>
+			</div>
+			<label>With npx</label>
+			<div class="position-relative code-container">
+				<button class="btn btn-primary copy-button" data-clipboard-text="yarn global add @knfs-tech/bamimi-cli"><i
+						class="fas fa-copy"></i></button>
+				<pre><code class="language-javascript">npx bamimi-cli create &lt;projectName&gt; [options]</code></pre>
+			</div>
+			<h5 class="mt-4 mb-2 bami">Step 3: Install node module:</h5>
+			<p>Go to the newly created project folder and run the command</p>
+			<label>With Npm</label>
+			<div class="position-relative code-container">
+				<button class="btn btn-primary copy-button" data-clipboard-text="npm install -g @knfs-tech/bamimi-cli"><i
+						class="fas fa-copy"></i></button>
+				<pre><code class="language-javascript">npm install</code></pre>
+			</div>
+			<label>With yarn</label>
+			<div class="position-relative code-container">
+				<button class="btn btn-primary copy-button" data-clipboard-text="yarn global add @knfs-tech/bamimi-cli"><i
+						class="fas fa-copy"></i></button>
+				<pre><code class="language-javascript">yarn install</code></pre>
+			</div>
+			<h5 class="mt-4 mb-2 bami">Step 4: Start project in local:</h5>
+			<label>With Npm</label>
+			<div class="position-relative code-container">
+				<button class="btn btn-primary copy-button" data-clipboard-text="npm install -g @knfs-tech/bamimi-cli"><i
+						class="fas fa-copy"></i></button>
+				<pre><code class="language-javascript">npm run start-dev</code></pre>
+			</div>
+			<label>With yarn</label>
+			<div class="position-relative code-container">
+				<button class="btn btn-primary copy-button" data-clipboard-text="yarn global add @knfs-tech/bamimi-cli"><i
+						class="fas fa-copy"></i></button>
+				<pre><code class="language-javascript">yarn start-dev</code></pre>
+			</div>
+			<div class="d-flex justify-content-center align-items-center">
+				<a href="https://github.com/knfs-library/bamimi-cli" target="_blank" title="BAMIMI Cli">
+					<button class="btn btn-knfs">Read more</button>
+				</a>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Footer -->
+	<footer>
+		<p>&copy; 2024 KNFs. All rights reserved.</p>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+	<script src="assets/js/scripts.js"></script>
+</body>
+
+</html>

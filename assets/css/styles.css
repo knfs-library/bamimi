@@ -1,0 +1,276 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f9f9f9;
+	cursor: url('assets/img/bamimi-logo.png'), auto;
+}
+.cursor {
+	position: fixed;
+	width: 32px;
+	height: 32px;
+	background: url('assets/img/bamimi-logo.png') no-repeat center center;
+	background-size: contain;
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+	transition: transform 0.1s ease;
+}
+
+.navbar {
+	background-color: #f9f9f9 !important;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	height: 50px;
+	color: #013c4d !important;
+	transition: box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.or {
+	font-size: 25px !important;
+	margin-right:0.5rem ;
+	margin-left: 0.5rem ;
+	backdrop-filter: blur(100px) !important;
+}
+
+.knfs-logo {
+	height: 25px !important;
+	padding: 0 !important;
+	margin: 0px !important;
+}
+
+.knfs-logo img {
+	vertical-align: top;
+	height: 25px !important;
+}
+
+.navbar .scrolled {
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2) !important;
+	backdrop-filter: blur(8px) !important;
+	background: transparent !important;
+}
+.navbar .nav-item .dropdown {
+	font-size: 6px !important;
+	color: #8d8b8b !important;
+}
+
+.navbar .navbar-brand {
+	color: #013c4d;
+}
+
+.navbar .navbar-nav .nav-link {
+	color: #013c4d;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+	color: #8d8b8b;
+}
+
+.hero {
+	background-color: #f9f9f9;
+	/* Màu nền sáng */
+	text-align: center;
+	padding: 4rem 2rem;
+	border-bottom: 0.6rem solid #f9f9f9;
+}
+
+@keyframes bling {
+	0% {
+		box-shadow: 0 0 20px rgba(255, 185, 185, 1),
+			0 0 40px rgba(255, 234, 185, 0.8),
+			0 0 60px rgba(202, 255, 185, 0.6),
+			0 0 80px rgba(185, 255, 241, 0.4),
+			0 0 100px rgba(185, 201, 255, 0.2);
+		transform: scale(1);
+	}
+
+	50% {
+		box-shadow: 0 0 30px rgba(255, 185, 185, 1),
+			0 0 60px rgba(255, 234, 185, 0.8),
+			0 0 900px rgba(202, 255, 185, 0.6),
+			0 0 120px rgba(185, 255, 241, 0.4),
+			0 0 150px rgba(185, 201, 255, 0.2);
+		transform: scale(1.05);
+	}
+
+	100% {
+		box-shadow: 0 0 20px rgba(255, 185, 185, 1),
+			0 0 40px rgba(255, 234, 185, 0.8),
+			0 0 60px rgba(202, 255, 185, 0.6),
+			0 0 80px rgba(185, 255, 241, 0.4),
+			0 0 100px rgba(185, 201, 255, 0.2);
+		transform: scale(1);
+	}
+}
+
+.hero img {
+	animation: bling 2s ease-in-out infinite;
+	max-width: 200px;
+	margin-bottom: 20px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 100px;
+	background-color: #f9f9f9;
+}
+
+.hero h1 {
+	font-size: 3rem;
+	color: #333;
+}
+
+.hero p {
+	font-size: 1.25rem;
+	color: #555;
+}
+
+section {
+	margin-bottom: 40px;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+pre {
+	background-color: #f8f9fa;
+	border: 1px solid #ddd;
+	padding: 10px;
+	border-radius: 5px;
+	overflow-x: auto;
+}
+
+pre code {
+	background-color: #f9f9f9;
+	color: #333;
+	border-radius: 5px;
+	padding: 10px;
+	overflow-x: auto;
+}
+
+.token.comment {
+	color: #6a737d;
+}
+
+.token.keyword {
+	color: #d73a49;
+}
+
+.token.string {
+	color: #032f62;
+}
+
+.token.function {
+	color: #6f42c1;
+}
+
+.full-height {
+	height: 100vh;
+}
+
+.flex-center {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.position-ref {
+	position: relative;
+}
+
+.top-right {
+	position: absolute;
+	right: 10px;
+	top: 18px;
+}
+
+.content {
+	text-align: center;
+}
+
+.title {
+	font-size: 66px;
+}
+
+.links>a {
+	color: #6f7477;
+	padding: 0 25px;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: .1rem;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.m-b-md {
+	margin-bottom: 10px;
+	color: #9f9fa0;
+}
+
+.bami {
+	color: #013C4D;
+}
+
+.mi {
+	color: #2B7F84;
+}
+
+.lead {
+	color: #f9f9f9;
+	font-size: 20px !important;
+}
+
+.highlight-text {
+	font-size: 23px !important;
+}
+
+.code-container {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+.copy-button {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 1000;
+	border: none;
+	background-color: transparent;
+	color: #a9a5a5;
+}
+
+.copy-button:hover {
+	cursor: pointer;
+	color: #7c7878;
+	background-color: transparent;
+}
+
+.copy-button:active {
+	cursor: pointer;
+	color: #5e5b5b;
+	background-color: transparent;
+}
+
+.copy-button:focus {
+	cursor: pointer;
+	color: #5e5b5b;
+	background-color: transparent;
+	outline: none;
+}
+
+.btn-knfs {
+	background-color:#013c4d;
+	color: #f9f9f9;
+}
+
+.btn-knfs:hover {
+	background-color: #f9f9f9;
+	color: #013c4d;
+	border: 0.1rem solid #013C4D;
+}
+footer {
+	background-color: #f9f9f9;
+	color: #013c4d;
+	padding: 1rem;
+	text-align: center;
+}
