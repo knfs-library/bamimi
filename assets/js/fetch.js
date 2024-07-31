@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-	fetch('0.1.0/data/categories.json')
+	fetch('docs/0.1.0/data/categories.json')
 		.then(response => response.json())
 		.then(data => {
 			const categoryList = document.getElementById('categoryList');
@@ -57,22 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function loadContent(content) {
-	const contentArea = document.getElementById('docContent');
-	const filePath = `0.1.0/docs/${content}.html`;
-
-	fetch(filePath)
-		.then(response => {
-			if (response.ok) {
-				return response.text();
-			} else {
-				throw new Error('File not found');
-			}
-		})
-		.then(text => {
-			contentArea.innerHTML = text;
-		})
-		.catch(error => {
-			console.error('Error loading content:', error);
-			contentArea.innerHTML = `<p>Error loading content: ${error.message}</p>`;
-		});
+	const filePath = `docs/0.1.0/docs/contents/${content}.html`;
+	const contentArea = document.getElementById('myIframe');
+	contentArea.setAttribute('src', filePath)
 }

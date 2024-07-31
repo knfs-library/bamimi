@@ -271,6 +271,11 @@ pre code {
 	color: #013c4d;
 	border: 0.1rem solid #013C4D;
 }
+iframe {
+	border: none;
+	width: 100%;
+	height: auto;
+}
 footer {
 	background-color: #f9f9f9;
 	color: #013c4d;
