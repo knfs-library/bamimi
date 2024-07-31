@@ -8,9 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			navbar.classList.remove('scrolled');
 		}
 	});
-});
 
-document.addEventListener('DOMContentLoaded', function () {
 	var clipboard = new ClipboardJS('.copy-button');
 
 	clipboard.on('success', function (e) {
@@ -23,11 +21,4 @@ document.addEventListener('DOMContentLoaded', function () {
 	clipboard.on('error', function (e) {
 		console.error('Copy failed', e);
 	});
-});
-
-const cursor = document.getElementById('customCursor');
-
-document.addEventListener('mousemove', (e) => {
-	cursor.style.left = `${e.clientX}px`;
-	cursor.style.top = `${e.clientY}px`;
 });

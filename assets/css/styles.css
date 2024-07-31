@@ -32,17 +32,20 @@ body {
 	margin-right:0.5rem ;
 	margin-left: 0.5rem ;
 	backdrop-filter: blur(100px) !important;
+	color: #013c4d8f;
 }
 
 .knfs-logo {
 	height: 25px !important;
 	padding: 0 !important;
 	margin: 0px !important;
+	
 }
 
 .knfs-logo img {
-	vertical-align: top;
+	vertical-align: middle;
 	height: 25px !important;
+	margin-bottom: 0.3rem;
 }
 
 .navbar .scrolled {
@@ -128,20 +131,20 @@ section {
 	margin-bottom: 40px;
 	padding: 20px;
 	background-color: #fff;
-	border-radius: 8px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 8px #f8f9fa;
 }
 
 pre {
-	background-color: #f8f9fa;
-	border: 1px solid #ddd;
+	border: 1px solid #f8f9fa;
 	padding: 10px;
-	border-radius: 5px;
 	overflow-x: auto;
+	border-radius: 8px;
+	overflow-x: auto;
+	box-shadow: 0 3px 3px rgba(68, 68, 68, 0.1);
 }
 
 pre code {
-	background-color: #f9f9f9;
+	background-color: #f8f9fa;
 	color: #333;
 	border-radius: 5px;
 	padding: 10px;

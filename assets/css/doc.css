@@ -1,0 +1,76 @@
+body {
+	overflow-y: hidden;
+}
+#categoryList {
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 8px #f8f9fa;
+	height: 100vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1001 !important;
+	scrollbar-color: #f8f9fa #fff;
+}
+
+.content-doc-container {
+	height: 100vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+	scrollbar-width: thin;
+    scrollbar-color: #2B7F84 #f8f9fa;
+}
+
+.nav-link {
+	padding: 0rem 0.5rem;
+}
+.space {
+	height: 2em;
+}
+
+#categoryList ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#categoryList .nav-item {
+	font-size: 16px;
+	height: 20px;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+#categoryList .nav-link {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #8d8b8b;
+}
+
+#categoryList .nav-link:hover {
+	border-radius: 5px;
+	color: #013C4D;
+}
+
+#categoryList .nav-icon {
+	margin-right: 10px;
+}
+
+#categoryList .nav-header {
+	padding: 0;
+	font-size: 15px;
+	color: #2B7F84;
+	font-weight: strong;
+}
+
+#categoryList .nav-pills .nav-link .active {
+	color: #013C4D;
+}
+
+footer {
+	background-color: #fff;
+	color: #013c4d;
+	padding: 1rem;
+	text-align: center;
+	z-index: 1001 !important;
+}

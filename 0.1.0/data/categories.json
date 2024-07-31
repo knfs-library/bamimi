@@ -1,0 +1,16 @@
+[
+	{
+		"id": "1",
+		"type": "nav-header",
+		"display": "INTRODUCTION",
+		"subcategories": [
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "What is Bamimi?",
+				"content": "overview"
+			}
+		]
+	}
+]
