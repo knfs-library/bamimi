@@ -20,9 +20,6 @@ body {
     scrollbar-color: #2B7F84 #f8f9fa;
 }
 
-.nav-link {
-	padding: 0rem 0.5rem;
-}
 .space {
 	height: 2em;
 }
@@ -45,6 +42,7 @@ body {
 	align-items: center;
 	text-decoration: none;
 	color: #8d8b8b;
+	padding: 0rem 1rem;
 }
 
 #categoryList .nav-link:hover {

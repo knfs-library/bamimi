@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
 				let li = document.createElement('li');
 
 				if (item.type === 'nav-header') {
-					li.classList.add('nav-header');
-					li.textContent = item.display;
+					li.classList.add('nav-header', 'mt-2');
+					li.textContent = item.display.toUpperCase();
 				} else if (item.type === 'nav-item') {
 					li.classList.add('nav-item');
 					li.innerHTML = `

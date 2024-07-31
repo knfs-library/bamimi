@@ -2,13 +2,167 @@
 	{
 		"id": "1",
 		"type": "nav-header",
-		"display": "INTRODUCTION",
+		"display": "Introduction",
 		"subcategories": [
 			{
 				"id": "1",
 				"type": "nav-item",
 				"slug": "what-is-bamimi",
 				"display": "What is Bamimi?",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Install",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Quick start",
+				"content": "overview"
+			}
+		]
+	},
+	{
+		"id": "1",
+		"type": "nav-header",
+		"display": "In-depth Guides",
+		"subcategories": [
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Bootstrap",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Controller",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Middleware",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Request",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Response",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Router",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Interface",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Database & ORM",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Mail",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Job",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "File",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Cache",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Log",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Socket",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Util",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Module",
+				"content": "overview"
+			}
+		]
+	},
+	{
+		"id": "1",
+		"type": "nav-header",
+		"display": "Architecture & Kernel",
+		"subcategories": [
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Architecture",
+				"content": "overview"
+			},
+			{
+				"id": "1",
+				"type": "nav-item",
+				"slug": "what-is-bamimi",
+				"display": "Kernel",
 				"content": "overview"
 			}
 		]
