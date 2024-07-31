@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function loadContent(content) {
-	const filePath = `docs/0.1.0/docs/contents/${content}.html`;
+	const filePath = `docs/0.1.0/contents/${content}.html`;
 	const contentArea = document.getElementById('myIframe');
 	contentArea.setAttribute('src', filePath)
 }
