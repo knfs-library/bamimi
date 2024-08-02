@@ -236,7 +236,7 @@ pre code {
 	position: absolute;
 	top: 10px;
 	right: 10px;
-	z-index: 1000;
+	z-index: 99;
 	border: none;
 	background-color: transparent;
 	color: #a9a5a5;
