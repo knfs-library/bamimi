@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BAMIMI - Controller</title>
+        <base href="https://libs.knfs-tech.com">
+        <link rel="icon" type="image/x-icon" href="bamimi/assets/img/bamimi-logo.png">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bamimi/assets/css/styles.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+
+    <body>
+        <h1>Controller</h1>
+
+        <section id="introduction">
+            <h2 class="mb-4">Introduction</h2>
+            <p>Instead of defining all request processing logic as an function in the route files, this logic can be place in a designated "controller" module. Controllers can group related request handling function into a single module. For example, <code class="language-javascript">user.controller.js</code> module might handle all incoming requests related to users, including showing, creating, updating, and deleting users. By default, controllers are stored in the <code class="language-bash">src/app/http/controllers/web</code> directory.</p>
+        </section>
+
+        <section id="writing-controllers">
+            <h2>Writing Controllers</h2>
+            <p>Controllers are just modules with it's functions accessible via <code class="language-javascript">module.exports</code>
+                , these functions should be written by using anonymous function assigned to an
+                attribute i.e <code class="language-javascript">{&lt;key&gt;: function () {}}</code></p>
+
+            <section id="basic-controllers">
+                <h3>Basic Controllers</h3>
+                <p>To generate a new controller, you can run the command <code class="language-bash">controller:generate</code>. This command, by default, will create controllers at the <code class="language-javascript">src/app/http/controllers/web</code> directory</p>
+                <div class="position-relative code-container">
+                    <button class="btn btn-primary copy-button"
+                            data-clipboard-target="#example_generate-controller"><i class="fas fa-copy"></i></button>
+                    <pre><code id="example_generate-controller" class="language-bash">
+# bamimi-cli controller:generate &lt;controllerName&gt; [options]
+bamimi-cli controller:generate my -t web
+                    </code></pre>
+                </div>
+
+                <p>Which will generate a template file like this</p>
+
+                <div class="position-relative code-container">
+                    <button data-clipboard-target="#example_basic-controller"
+                            class="btn btn-primary copy-button"><i class="fas fa-copy"></i></button>
+                    <pre><code id="example_basic-controller"
+                               class="language-javascript">
+// src/app/http/controllers/web/my.controller.js
+"use strict";
+
+module.exports = {
+    index: async function (req, res) {
+    return await res.send("Hello World")
+    },
+};
+                    </code></pre></div>
+
+                <p>A controller is a collection of functions each takes two
+                    arguments a request, and a respond . Once you have the
+                    controller file created, you may declare it to a route. In
+                    this example when you open the route
+                    <code>localhost:4001/my-controller</code> "Hello World" will
+                    appear</p>
+                <div class="position-relative code-container">
+                    <button class="btn btn-primary copy-button"
+                            data-clipboard-target="#example_route-to-controller"><i class="fas fa-copy"></i></button>
+                    <pre><code id="example_route-to-controller" class="language-javascript">
+// src/routes/web/index.js
+"use strict";
+
+const router = require("express").Router();
+const MyController = require("../../app/http/controllers/web/my.controller");
+
+router.get("/", require("../../app/http/controllers/web/demo.controller").index);
+router.get("/my-controller", MyController.index);
+
+module.exports = router;
+                    </code></pre></div>
+            </section>
+
+            <section id="web-controllers">
+                <h3>Web Controllers</h3>
+                <p>Different from a basic controller, a web controller return a HTML document render by a template engine
+                    in this case an ejs template via the built-in <code class="language-javascript">res.view()</code> middleware</p>
+                <div class="position-relative code-container">
+                    <button class="btn btn-primary copy-button"
+                            data-clipboard-target="#example_web-controller"><i class="fas fa-copy"></i></button>
+                    <pre><code id="example_web-controller"
+                               class="language-javascript">
+// src/app/http/controllers/web/demo.controller.js
+"use strict";
+
+const pkv = require("../../../../../package.json");
+
+module.exports = {
+    index: async function (req, res) {
+        return await res.view({
+            view: "pages/home", data: {
+                version: pkv.version
+            }
+        });
+    }
+};
+                    </code></pre>
+                </div>
+            </section>
+
+            <section id="api-controllers">
+                <h3>API Controllers</h3>
+                <p>On the other hand, an API controller return a Json response via <code class="language-javascript">res.sendMessage()</code> middleware</p>
+                <div class="position-relative code-container" >
+                    <button class="btn btn-primary copy-button"
+                            data-clipboard-target="#example_api-controller" ><i class="fas fa-copy"></i></button>
+                    <pre><code id="example_api-controller" class="language-javascript">
+// src/app/http/controllers/api/demo.controller.js
+"use strict";
+
+module.exports = {
+    index: async function (req, res) {
+        const users = [
+            {
+                name: "Bamimi user 1",
+            },
+            {
+                name: "Bamimi user 2",
+            }
+        ];
+        return res.status(200).sendMessage(users);
+    }
+};
+                    </code>
+                    </pre>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <h2>Controller with Middleware</h2>
+            <p>Middleware may be assigned to the controller's routes in your route files, think of it like
+                a chain of actions with the middlewares being links in between and controllers
+                being the last thing to handle request. This mean, often before requests be
+                handled by controllers, they have gone through validation or transformation at
+                middlewares. Sometime, middlewares may take effect after a controller have
+                handled. Whenever a request fail at a middleware response is return at that very
+                middleware and is not passed onto the controller</p>
+            <div class="position-relative code-container">
+                <button class="btn btn-primary copy-button" data-clipboard-target="#example_controller-with-middleware"><i class="fas fa-copy"></i></button>
+                <pre><code id="example_controller-with-middleware" class="language-javascript">
+"use strict";
+
+const router = require("express").Router();
+const AdminController = require("../../app/http/controllers/web/admin.controller");
+
+const Authorization = require("../../app/http/middleware/authorize.mid")
+router.get("/admin", Authorization(["admin"]), AdminController.index);
+
+module.exports = router;
+                </code></pre></div>
+
+        </section>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+        <script src="bamimi/assets/js/scripts.js"></script>
+    </body>
+</html>
