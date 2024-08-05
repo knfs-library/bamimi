@@ -3,17 +3,6 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #f9f9f9;
-	cursor: url('assets/img/bamimi-logo.png'), auto;
-}
-.cursor {
-	position: fixed;
-	width: 32px;
-	height: 32px;
-	background: url('assets/img/bamimi-logo.png') no-repeat center center;
-	background-size: contain;
-	pointer-events: none;
-	transform: translate(-50%, -50%);
-	transition: transform 0.1s ease;
 }
 
 .navbar {
@@ -274,10 +263,31 @@ pre code {
 iframe {
 	border: none;
 	width: 100%;
-	height: auto;
-	min-height: 100vh;
+	/* height: auto; */
+	/* min-height: 100vh; */
 	scrollbar-width:none !important;
+}
 
+.spinner {
+	/* display: none; */
+	width: 5rem;
+	height: 5rem;
+	border: 0.6rem solid #f9f9f9;
+	border-bottom: 0.6rem solid #013c4d;
+	border-top: 0.6rem solid #013c4d;
+	border-radius: 40%;
+	animation: spin 1s linear infinite;
+	margin: 45% auto;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 footer {

@@ -21,15 +21,4 @@ document.addEventListener('DOMContentLoaded', function () {
 	clipboard.on('error', function (e) {
 		console.error('Copy failed', e);
 	});
-
-	adjustIframeHeight();
 });
-
-function adjustIframeHeight() {
-	const iframe = document.getElementById('myIframe');
-	iframe.onload = function () {
-		const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-		iframe.style.height = iframeDocument.documentElement.scrollHeight + 'px';
-	};
-
-}

@@ -1,0 +1,32 @@
+.page-body .text-content {
+	font-size: 14px;
+}
+
+.text-content ul li {
+	font-size: 14px;
+}
+
+.page-body p a {
+	color: #013c4d !important;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.card {
+	border: 1px solid #fbfbfb;
+	border-radius: 5px;
+	transition: box-shadow 0.3s ease;
+	overflow: hidden;
+	height: 18em !important;
+	max-height: fit-content;
+}
+
+.card-text {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.card  a {
+	color: #333333 !important;
+}

@@ -9,21 +9,21 @@
 				"type": "nav-item",
 				"slug": "what-is-bamimi",
 				"display": "What is Bamimi?",
-				"content": "overview"
+				"content": "what-is-bamimi"
 			},
 			{
 				"id": "1",
 				"type": "nav-item",
-				"slug": "what-is-bamimi",
+				"slug": "install",
 				"display": "Install",
-				"content": "overview"
+				"content": "install"
 			},
 			{
 				"id": "1",
 				"type": "nav-item",
-				"slug": "what-is-bamimi",
+				"slug": "quick-start",
 				"display": "Quick start",
-				"content": "overview"
+				"content": "quick-start"
 			}
 		]
 	},
